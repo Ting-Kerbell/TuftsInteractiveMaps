@@ -1,4 +1,14 @@
-Name,lat,lng,Type,Notes
-Halligan,42.408197,-71.116141,bathroom,Turn right
-Barnum,2,6,academic,Turn right
-Ballou,3,7,academic,Turn up
+Name,lat,lng,Type,Notes,User
+Halligan,42.4082,-71.1161,bathroom,"Go through front door, through hallway on the right, turn right, walk down the hallway towards the couches and the bathrooms will be on the left.",PSV
+Hill,42.4094,-71.1197,bathroom,Directly in front of main entrance (walk 10ft),S
+Tisch Library,42.40648,-71.1195,bathroom,Reading Room to the right of the entrance,PSV
+Braker,42.407326,-71.118173,bathroom,"Go upstairs, and it should be at the center of the hallway 
+",PSV
+Tilton,42.404743,-71.122045,bathroom,"If the entrance is on floor 0, the 1st,2nd,3rd and 4th floors each have 8 gender neutral bathrooms towards the center of the hall",S
+Wren,42.409769,-71.121899,bathroom,"Enter, and make a right and see the room correctly labeled",S
+East,42.407605,-71.118752,bathroom,Near the entrance,PSV
+Fletcher Fields,42.4075,-71.123,green,good for catch,D
+Aidekman Arts Center,42.4045,-71.1189,bathroom,,
+Academic quad,42.408141,-71.120737,green,good for walkies,D
+Dewick MacPhie,42.4053,-71.1212,bathroom,Currently under construction!,
+Prez Lawn,42.406797,-71.120532,green,lots of other doggos,D
