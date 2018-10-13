@@ -53,7 +53,9 @@ app.get('/user', function(req, res) {
 app.get('/service', function(req, res) {
   res.sendFile('service.html', {root: path.join(__dirname, 'public')});
 })
-
+app.get('/dogService', function(req, res) {
+  res.sendFile('dogService.html', {root: path.join(__dirname, 'public')});
+})
 app.get('/map', function(req, res) {
   res.sendFile('mapTest.html', {root: path.join(__dirname, 'public')});
 })
