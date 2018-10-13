@@ -1,5 +1,5 @@
 {
-  "name": "e4p",
+  "name": "timtm",
   "version": "0.0.0",
   "description": "E4P JumboCode Project",
   "main": "server.js",
@@ -22,5 +22,6 @@
     "path": "^0.12.7",
     "pug": "^2.0.3",
     "socket.io": "^2.1.1"
-  }
+  },
+  "devDependencies": {}
 }
