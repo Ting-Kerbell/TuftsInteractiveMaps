@@ -1,6 +1,7 @@
 const express = require('express');
 const http = require('http');
 const path = require('path');
+const PORT = process.env.PORT || 8080
 
 const app = express();
 const server = http.createServer(app);
@@ -14,4 +15,4 @@ app.get('/database.json', function(req, res) {
     console.log(service, user);
 });
 
-server.listen(8080, () => console.log('App is running on port 8080'));
+app.listen(PORT);
