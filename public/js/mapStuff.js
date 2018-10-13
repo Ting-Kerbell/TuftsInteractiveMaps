@@ -32,6 +32,7 @@
         var param = window.location.href;
         param = param.substring(param.indexOf('service=') + 8, param.indexOf('&'));
         var url =  "http://lit-everglades-77388.herokuapp.com/database.json?service="+ param;
+        console.log("param:", param);
         var request = new XMLHttpRequest();
         request.open("GET", url, true);
          request.onreadystatechange = function() {
