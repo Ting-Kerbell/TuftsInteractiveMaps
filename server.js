@@ -6,6 +6,12 @@ const app = express();
 const server = http.createServer(app);
 var fs = require('fs');
 
+/* Enable CORS */
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -32,8 +38,7 @@ app.get('/database.json', function(req, res) {
         returnObj.push(obj[i]);
       }
   }
-
-  res.send(returnObj);
+  res.json(returnObj);
 });
 
 app.get('/', function(req, res) {
