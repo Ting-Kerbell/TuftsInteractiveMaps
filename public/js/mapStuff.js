@@ -22,7 +22,7 @@ function initMap() {
       url: iconBase + 'car.png'
 
     },
-    dog: {
+    green: {
       size: new google.maps.Size(20, 32),
       url: iconBase + 'paw.png'
     }
