@@ -15,8 +15,24 @@
       <div class="col-2 d-none d-md-block">
       </div>
       <div class="col-sm-12 col-md-8">
-        <h1>Hi! I'm TIM, the Tufts Interactive Map.</h1>
-        <a href="user">Start</a>
+        <h1>What are you looking for?</h1>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="?service=bathroom">Bathrooms</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="?service=food">Places to Eat</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="?service=study">Places to Study</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="?service=emergency">Emergency Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="?service=park">Parking</a>
+          </li>  
+        </ul>
       </div>
       <div class="col-2 d-none d-md-block">
       </div>
@@ -26,5 +42,18 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var url = window.location.href;
+      user = url.substring(url.indexOf('?') + 1);
+
+      $("a").click(function(e) {
+        e.preventDefault();
+        var service = event.currentTarget.getAttribute('href');
+        window.location.replace('map' + service + '&' + user);
+      });
+    });
+  </script>
 </body>
 </html>
