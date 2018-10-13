@@ -1,7 +1,5 @@
-
 var map;
 function initMap() {
-  var markers = [];
   var iconBase = 'img/';
   var icons = {
     bathroom: {
@@ -39,6 +37,11 @@ function initMap() {
   param = param.substring(param.indexOf('service=') + 8, param.indexOf('&'));
   var url =  "http://lit-everglades-77388.herokuapp.com/database.json?service="+ param;
   console.log("param:", param);
+  if(param!="green"){
+    $("#banner").html("Currently Displaying: "+param);
+  }else{
+    $("#banner").html("Places to Play!");
+  }
   var request = new XMLHttpRequest();
   request.open("GET", url, true);
    request.onreadystatechange = function() {
@@ -53,9 +56,6 @@ function initMap() {
            icon: icons[param].url,
          });
 
-         // console.log("before", marker.position);
-
-         // markers.push(marker);
          var title = parsed[i][0];
          var notes = parsed[i][4];
          var contentString = "<h4>" + title + "</h4></br>" + "Gender neutral bathroom</br>" + notes;
@@ -76,11 +76,7 @@ function initMap() {
      } else if (request.readyState == 4 && request.status != 200) {
           console.log("Sorry - we couldn't fetch your information.");
      }
-
-
-
-
    }
-   request.send();
 
+   request.send();
 }
