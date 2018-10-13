@@ -1,38 +1,54 @@
       var map;
 
-    var iconBase = 'img/';
+   
+      function initMap() {
+         var iconBase = 'img/';
         var icons = {
-          toilot: {
-            icon: iconBase + 'toilet.png'
+          toilet: {
+            size: new google.maps.Size(20, 32),
+            url: iconBase + 'toilet.png'
+            
           },
           food: {
-            icon: iconBase + 'food.png'
+            size: new google.maps.Size(20, 32),
+            url: iconBase + 'food.png'
+            
           },
           study: {
-            icon: iconBase + 'study.png'
+            size: new google.maps.Size(20, 32),
+            url: iconBase + 'study.png'
+            
           },
           parking: {
-            icon: iconBase + 'car.png'
+            size: new google.maps.Size(20, 32),
+            url: iconBase + 'car.png'
+         
           }
         };
-      function initMap(type, person) {
-        
         map = new google.maps.Map(document.getElementById('map'), {
           zoom: 15,
           center: {lat: 42.4075, lng: -71.1190},
           mapTypeId: 'terrain'
         });
+         var latLng = new google.maps.LatLng(42.4068,-71.1187)
 
+          var marker = new google.maps.Marker({
+            position: latLng,
+            map: map,
+            
+            icon: icons["toilet"].url
+          });
         $.get("tim.com/?service="+type+"&user="+person, function(data) {
           results = data.parse();
         for (var i = 0; i < results.length; i++) {
           var coords = results[i].coordinates;
-          var latLng = new google.maps.LatLng(coords[1],coords[0]);
+          //var latLng = new google.maps.LatLng(coords[1],coords[0]);
+          var latLng = new google.maps.LatLng(results[i][1],results[i][2])
           var marker = new google.maps.Marker({
             position: latLng,
             map: map,
             icon: icons[type].icon
           });
         }
-      });
+      }); 
 }
