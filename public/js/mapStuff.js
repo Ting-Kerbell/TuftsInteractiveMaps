@@ -32,16 +32,13 @@
         var param = window.location.href;
         param = param.substring(param.indexOf('service=') + 8, param.indexOf('&'));
         var url =  "http://lit-everglades-77388.herokuapp.com/database.json?service="+ param;
-        console.log(param);
         var request = new XMLHttpRequest();
         request.open("GET", url, true);
          request.onreadystatechange = function() {
            if (request.readyState == 4 && request.status == 200) {
              response = request.responseText;
              parsed = JSON.parse(response);
-             console.log("AAAAAAAAAfter parsed");
              for (var i = 0; i < parsed.length; i++) {
-               console.log("i:", i)
                var latLng = new google.maps.LatLng(parsed[i][1], parsed[i][2])
                var marker = new google.maps.Marker({
                  position: latLng,
