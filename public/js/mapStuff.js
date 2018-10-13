@@ -38,7 +38,7 @@
             
             icon: icons["toilet"].url
           });
-        $.get("tim.com/?service="+type+"&user="+person, function(data) {
+        $.get("http://lit-everglades-77388.herokuapp.com/database.json?service="+type, function(data) {
           results = data.parse();
         for (var i = 0; i < results.length; i++) {
           var coords = results[i].coordinates;
