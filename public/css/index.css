@@ -5,3 +5,10 @@ body {
 .nav>li>a:focus, .nav>li>a:hover {
   background-color: #eee;
 }
+
+.content {
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  height: 100vh
+}
