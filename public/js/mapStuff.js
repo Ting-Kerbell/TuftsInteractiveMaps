@@ -61,12 +61,13 @@ function initMap() {
          var contentString = "<h4>" + title + "</h4></br>" + "Gender neutral bathroom</br>" + notes;
 
          marker.string = contentString;
-         marker.addListener('click', function(e) {
-           marker = this;
-           console.log(marker.string);       
-           var infoWindow = new google.maps.InfoWindow({
+         var infoWindow = new google.maps.InfoWindow({
              content: marker.string
            });
+         marker.addListener('click', function(e) {
+           marker = this;
+           console.log(marker.string);
+           infoWindow.setContent(marker.string)
            infoWindow.open(map, this);
          });
 
