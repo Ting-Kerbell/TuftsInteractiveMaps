@@ -36,6 +36,7 @@ app.get('/database.json', function(req, res) {
   for (i = 1; i < obj.length; i++) {
       if (obj[i][3] == type) {
         returnObj.push(obj[i]);
+        console.log(obj[i]);
       }
   }
   res.json(returnObj);

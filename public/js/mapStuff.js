@@ -52,27 +52,24 @@ function initMap() {
            icon: icons[param].url,
          });
 
-         console.log("before", marker.position);
+         // console.log("before", marker.position);
 
-         markers.push(marker);
-         marker.setMap(map);
-       }
-
-       for (i = 0; i < parsed.length; i++) {
-         var marker = markers[i];
-         console.log(marker);
+         // markers.push(marker);
          var title = parsed[i][0];
-         console.log(title);
          var notes = parsed[i][4];
          var contentString = "<h4>" + title + "</h4></br>" + "Gender neutral bathroom</br>" + notes;
 
-         var infoWindow = new google.maps.InfoWindow({
-           content: contentString
+         marker.string = contentString;
+         marker.addListener('click', function(e) {
+           marker = this;
+           console.log(marker.string);       
+           var infoWindow = new google.maps.InfoWindow({
+             content: marker.string
+           });
+           infoWindow.open(map, this);
          });
-         marker.addListener('click', function() {
-           marker
-           infoWindow.open(map, marker);
-         })
+
+         marker.setMap(map);
        }
      } else if (request.readyState == 4 && request.status != 200) {
           console.log("Sorry - we couldn't fetch your information.");
