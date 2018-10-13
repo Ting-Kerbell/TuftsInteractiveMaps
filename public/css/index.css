@@ -43,13 +43,30 @@ body {
 }
 
 .heading-secondary:hover {
-    transform: skewY(2deg) skewX(15deg);
+    transform: translateY(-1.5rem) scale(1.03); 
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); 
 }
 
+.back-arrow{
+  margin-top: 1rem;
+  float: left;
+  width: 50%;
+  height:10%;
+}
 .content {
   display: flex; 
   flex-direction: column; 
   justify-content: center; 
   height: 100vh
+}
+
+.heading-static{
+   font-size: 3rem;
+   margin: 1rem auto 1rem auto;
+  font-weight: 700;
+  background-image: linear-gradient(to right, #fff, #fffff0);
+  display: inline-block;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2 rem;
 }

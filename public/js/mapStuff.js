@@ -8,6 +8,12 @@
           food: {
             icon: iconBase + 'food.png'
           },
+          study: {
+            icon: iconBase + 'study.png'
+          },
+          parking: {
+            icon: iconBase + 'car.png'
+          }
         };
       function initMap(type, person) {
         
